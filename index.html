@@ -8,17 +8,7 @@
 <body>
 
 <div id="container"></div>
-<script>
-document.addEventListener("backbutton", function(e){
-    if($.mobile.activePage.is('#homePage')){
-        e.preventDefault();
-        navigator.app.exitApp();
-    }
-    else {
-        navigator.app.backHistory()
-    }
-}, false);
-</script>
+
 <script src="lib/cordova-2.5.0.js"></script>
 <script src="lib/fastclick.js"></script>
 <script src="lib/jquery-1.9.1.min.js"></script>
