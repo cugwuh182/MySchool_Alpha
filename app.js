@@ -1,16 +1,20 @@
 window.addEventListener('load', function () {
     new FastClick(document.body);
 }, false);
-document.addEventListener("backbutton", function(e){
-    if($.mobile.activePage.is('#homePage')){
-        e.preventDefault();
-        navigator.app.exitApp();
-    }
-    else {
-        navigator.app.backHistory()
-    }
-}, false);
-// The dynamically built HTML pages. In a real-life app, In a real-life app, use Handlerbar.js, Mustache.js or another template engine
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+    document.addEventListener("backbutton", function(e){
+       if($.mobile.activePage.is('#homepage')){
+           e.preventDefault();
+           navigator.app.exitApp();
+       }
+       else {
+           navigator.app.backHistory()
+       }
+    }, false);
+}// The dynamically built HTML pages. In a real-life app, In a real-life app, use Handlerbar.js, Mustache.js or another template engine
 var homePage =
     '<div>' +
         '<div class="header"><h1>MySchool</h1></div>' +
